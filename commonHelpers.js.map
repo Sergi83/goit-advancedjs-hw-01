@@ -1,0 +1,1 @@
+{"version":3,"file":"commonHelpers.js","sources":["../src/main.js"],"sourcesContent":["// 1\n// check if the template works\nconsole.log('test object');\n"],"names":[],"mappings":"ssBAEA,QAAQ,IAAI,aAAa"}
