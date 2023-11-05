@@ -1,11 +1,24 @@
-// import vimeo
+// import vimeo and throttle
 import Player from '@vimeo/player';
+import throttle from 'lodash.throttle';
 
-const player = new Player('handstick', {
-  id: 19231868,
-  width: 640,
-});
+// get tag with video player
+const video = document.querySelector('iframe');
 
-player.on('play', function () {
-  console.log('played the video!');
-});
+//
+const player = new Player(video);
+
+// create key for local storage
+const LS_KEY = 'videoplayer-current-time';
+
+// add time in seconds to local storage
+const addTimeToLS = time => {
+  // seconds = the current playback position
+  localStorage.setItem(LS_KEY, time.seconds);
+};
+
+// update time in local storage every second
+player.on('timeupdate', throttle(addTimeToLS, 1000));
+
+// set time where video stoped when you open new tab or restart browser
+player.setCurrentTime(localStorage.getItem(LS_KEY));
