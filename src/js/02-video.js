@@ -20,5 +20,5 @@ const addTimeToLS = time => {
 // update time in local storage every second
 player.on('timeupdate', throttle(addTimeToLS, 1000));
 
-// set time where video stoped when you open new tab or restart browser
+// set time where video stoped when you open new tab or restart browser, add condition for default state when loading (without the condition get error in console)
 player.setCurrentTime(localStorage.getItem(LS_KEY) || 0);
