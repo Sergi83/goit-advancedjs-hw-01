@@ -21,4 +21,4 @@ const addTimeToLS = time => {
 player.on('timeupdate', throttle(addTimeToLS, 1000));
 
 // set time where video stoped when you open new tab or restart browser
-player.setCurrentTime(localStorage.getItem(LS_KEY));
+player.setCurrentTime(localStorage.getItem(LS_KEY) || 0);
