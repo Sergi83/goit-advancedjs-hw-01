@@ -32,7 +32,7 @@ function hundleInput(e) {
   localStorage.setItem(LS_KEY, JSON.stringify(getFormData));
 }
 
-// on submit event clear form's inputs and form data from local storage
+// on submit event clear form's inputs and form data from local storage (show sent data in console)
 function hundleSubmit(e) {
   e.preventDefault();
   console.log(getFormData);
