@@ -33,7 +33,3 @@ let gallerySimpleLightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
-
-gallerySimpleLightbox.on('error.simplelightbox', function (e) {
-  console.log(e);
-});

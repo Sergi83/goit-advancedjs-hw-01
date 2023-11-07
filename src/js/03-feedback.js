@@ -35,7 +35,7 @@ function hundleInput(e) {
 // on submit event clear form's inputs and form data from local storage
 function hundleSubmit(e) {
   e.preventDefault();
-
+  console.log(getFormData);
   localStorage.removeItem(LS_KEY);
   elements.form.reset();
   getFormData.email = '';
